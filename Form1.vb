@@ -26,11 +26,10 @@ Public Class Form1
         EnviarComando("/0") 'Consumidor final
 
         'envio estas descriciones aqui, porque si pasa algo luego no las puedo imprimir.
-        EnviarComando("i00NUMERO: 707825")
         EnviarComando("y0000707825")
         '----------------------------------------------
 
-        EnviarComando("""000008000000003000Ref: 12458") 'PRECIO=800.00  X CANTIDAD= 30.00
+        EnviarComando("""000008000000003000|codigo|Ref: 12458") 'PRECIO=800.00  X CANTIDAD= 30.00
         EnviarComando("@PINO 2X4X16 BT")                'Descripcion adicional para el articulo
         EnviarComando("""000017600000015000Ref: 13729") 'PRECIO=1760.00  X CANTIDAD= 150.00
         EnviarComando("@PLYWOOD HIDROFUGO 3/4")
@@ -44,6 +43,9 @@ Public Class Form1
 
         Dim Numero = S1.getQuantityNonFiscalDocuments().ToString()
         Dim Serial = S1.getRegisteredMachineNumber()
+
+        EnviarComando("@ ")
+        EnviarComando("@VALORES PARA ARMAR NIF")
 
         'USARE ESTOS VALORES PARA SABER EL NIF GENERADO.
         EnviarComando("@Serial:" & Serial)
@@ -66,14 +68,16 @@ Public Class Form1
 
         EnviarComando("/2")
 
-        EnviarComando("""000017600000015000Referencia: 13729")
+        EnviarComando("""000008000000003000|codigo|Ref: 12458") 'PRECIO=800.00  X CANTIDAD= 30.00
+        EnviarComando("@PINO 2X4X16 BT")                'Descripcion adicional para el articulo
+        EnviarComando("""000017600000015000Ref: 13729") 'PRECIO=1760.00  X CANTIDAD= 150.00
         EnviarComando("@PLYWOOD HIDROFUGO 3/4")
 
         EnviarComando("4") 'totalizar sin imprimir
 
-        EnviarComando("@ESTOS COMENTARIOS NO IMPRIMEN")
-        EnviarComando("@ESTOS COMENTARIOS NO IMPRIMEN")
-        EnviarComando("@ESTOS COMENTARIOS NO IMPRIMEN")
+        EnviarComando("@Coment. despues del TOTAL")
+        EnviarComando("@COMENT. DESPUES DEL TOTAL")
+        EnviarComando("@ESTOS COMENTARIOS pie de pagina")
 
         EnviarComando("199")
     End Sub
@@ -93,6 +97,8 @@ Public Class Form1
             End If
 
             paso = True
+        Else
+            MsgBox("NO fue posible abriel")
         End If
 
         Return paso
