@@ -9,7 +9,13 @@ Public Class Form1
             Return
         End If
 
-        EnviarComando("F00000000B1500002000")
+        'CONFIGURAR CODE 39
+        EnviarComando("PJ4303")
+
+        'CONFIGURAR MODO RETAIL
+        EnviarComando("PJ3201")
+
+        EnviarComando("F00000000B0200002000")
 
         EnviarComando("iR0404000316") 'RNC
 
@@ -31,7 +37,7 @@ Public Class Form1
 
         EnviarComando("4") 'totalizar sin imprimir
 
-        EnviarComando("207000030000000") 'Pagar 300,000.00
+        EnviarComando("201000030000000") 'Pagar 300,000.00
         'ERROR IMPORTANTE: si envio 101 las descripciones adicionales no salen.
 
         Dim S1 As S1PrinterData = Impresora.getS1PrinterData()
