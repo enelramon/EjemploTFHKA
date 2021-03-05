@@ -26,6 +26,9 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PuertoTextBox = New System.Windows.Forms.TextBox()
         Me.NCButton = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TxtLog = New System.Windows.Forms.TextBox()
+        Me.DescargarZButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'FacturaFirmaButton
@@ -52,7 +55,7 @@ Partial Class Form1
         Me.PuertoTextBox.Name = "PuertoTextBox"
         Me.PuertoTextBox.Size = New System.Drawing.Size(78, 20)
         Me.PuertoTextBox.TabIndex = 26
-        Me.PuertoTextBox.Text = "4"
+        Me.PuertoTextBox.Text = "5"
         '
         'NCButton
         '
@@ -63,11 +66,46 @@ Partial Class Form1
         Me.NCButton.Text = "Nota de Credito"
         Me.NCButton.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(133, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(55, 23)
+        Me.Button1.TabIndex = 29
+        Me.Button1.Text = "Flags"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TxtLog
+        '
+        Me.TxtLog.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtLog.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.TxtLog.Location = New System.Drawing.Point(242, 10)
+        Me.TxtLog.Multiline = True
+        Me.TxtLog.Name = "TxtLog"
+        Me.TxtLog.ReadOnly = True
+        Me.TxtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.TxtLog.Size = New System.Drawing.Size(122, 195)
+        Me.TxtLog.TabIndex = 30
+        Me.TxtLog.WordWrap = False
+        '
+        'DescargarZButton
+        '
+        Me.DescargarZButton.Location = New System.Drawing.Point(12, 182)
+        Me.DescargarZButton.Name = "DescargarZButton"
+        Me.DescargarZButton.Size = New System.Drawing.Size(76, 23)
+        Me.DescargarZButton.TabIndex = 31
+        Me.DescargarZButton.Text = "Descargar Z"
+        Me.DescargarZButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(239, 217)
+        Me.ClientSize = New System.Drawing.Size(376, 217)
+        Me.Controls.Add(Me.DescargarZButton)
+        Me.Controls.Add(Me.TxtLog)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.NCButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PuertoTextBox)
@@ -83,4 +121,7 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents PuertoTextBox As TextBox
     Private WithEvents NCButton As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TxtLog As TextBox
+    Friend WithEvents DescargarZButton As Button
 End Class
